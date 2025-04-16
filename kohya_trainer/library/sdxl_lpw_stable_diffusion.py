@@ -18,7 +18,7 @@ from diffusers.pipelines.stable_diffusion import StableDiffusionPipelineOutput, 
 from diffusers.utils import logging
 from PIL import Image
 
-from library import sdxl_model_util, sdxl_train_util
+from ..library import sdxl_model_util, sdxl_train_util
 
 
 try:

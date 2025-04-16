@@ -6,7 +6,9 @@ from pathlib import Path
 from typing import List
 from tqdm import tqdm
 from collections import Counter
-import library.train_util as train_util
+
+from ..library import train_util as train_util
+
 
 TAGS_EXT = ".txt"
 CAPTION_EXT = ".caption"

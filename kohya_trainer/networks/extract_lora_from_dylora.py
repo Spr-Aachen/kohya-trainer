@@ -8,8 +8,9 @@ import os
 import torch
 from safetensors.torch import load_file, save_file, safe_open
 from tqdm import tqdm
-from library import train_util, model_util
 import numpy as np
+
+from ..library import train_util, model_util
 
 
 def load_state_dict(file_name):

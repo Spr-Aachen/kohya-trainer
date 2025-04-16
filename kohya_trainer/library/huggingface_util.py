@@ -3,7 +3,8 @@ from huggingface_hub import HfApi
 from pathlib import Path
 import argparse
 import os
-from library.utils import fire_in_thread
+
+from .utils import fire_in_thread
 
 
 def exists_repo(repo_id: str, repo_type: str, revision: str = "main", token: str = None):

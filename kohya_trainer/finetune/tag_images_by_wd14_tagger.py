@@ -12,7 +12,8 @@ from huggingface_hub import hf_hub_download
 import torch
 from pathlib import Path
 
-import library.train_util as train_util
+from ..library import train_util as train_util
+
 
 # from wd14 tagger
 IMAGE_SIZE = 448

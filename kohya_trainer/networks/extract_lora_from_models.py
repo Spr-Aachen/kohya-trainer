@@ -8,9 +8,10 @@ import os
 import torch
 from safetensors.torch import load_file, save_file
 from tqdm import tqdm
-import library.model_util as model_util
-import library.sdxl_model_util as sdxl_model_util
-import lora
+
+from . import lora
+from ..library import model_util
+from ..library import sdxl_model_util
 
 
 CLAMP_QUANTILE = 0.99

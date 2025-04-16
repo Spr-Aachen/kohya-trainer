@@ -13,8 +13,10 @@ import torch
 from torchvision import transforms
 from torchvision.transforms.functional import InterpolationMode
 sys.path.append(os.path.dirname(__file__))
-from blip.blip import blip_decoder
-import library.train_util as train_util
+
+from ..finetune.blip.blip import blip_decoder
+from ..library import train_util as train_util
+
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

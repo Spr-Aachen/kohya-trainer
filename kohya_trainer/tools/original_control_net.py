@@ -4,9 +4,8 @@ import cv2
 import torch
 from safetensors.torch import load_file
 
-from library.original_unet import UNet2DConditionModel, SampleOutput
-
-import library.model_util as model_util
+from ..library.original_unet import UNet2DConditionModel, SampleOutput
+from ..library import model_util
 
 
 class ControlNetInfo(NamedTuple):

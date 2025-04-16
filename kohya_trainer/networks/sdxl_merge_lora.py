@@ -4,9 +4,10 @@ import os
 import torch
 from safetensors.torch import load_file, save_file
 from tqdm import tqdm
-from library import sdxl_model_util
-import library.model_util as model_util
-import lora
+
+from ..networks import lora
+from ..library import sdxl_model_util
+from ..library import model_util
 
 
 def load_state_dict(file_name, dtype):

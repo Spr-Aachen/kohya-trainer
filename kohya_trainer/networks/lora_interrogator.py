@@ -1,14 +1,11 @@
-
-
 from tqdm import tqdm
-from library import model_util
-import library.train_util as train_util
 import argparse
 from transformers import CLIPTokenizer
 import torch
 
-import library.model_util as model_util
-import lora
+from . import lora
+from ..library import train_util
+from ..library import model_util
 
 TOKENIZER_PATH = "openai/clip-vit-large-patch14"
 V2_STABLE_DIFFUSION_PATH = "stabilityai/stable-diffusion-2"     # ここからtokenizerだけ使う
