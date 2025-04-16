@@ -1,7 +1,13 @@
 import argparse
 import torch
-from library import sdxl_model_util, sdxl_train_util, train_util
-import train_network
+
+import sys
+from pathlib import Path
+parentDir = Path(__file__).absolute().parent.parent.as_posix()
+sys.path.append(parentDir)
+
+from kohya_trainer.library import sdxl_model_util, sdxl_train_util, train_util
+from kohya_trainer import train_network
 
 
 class SdxlNetworkTrainer(train_network.NetworkTrainer):

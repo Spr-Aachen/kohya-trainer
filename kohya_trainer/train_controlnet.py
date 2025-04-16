@@ -16,16 +16,21 @@ from accelerate.utils import set_seed
 from diffusers import DDPMScheduler, ControlNetModel
 from safetensors.torch import load_file
 
-import library.model_util as model_util
-import library.train_util as train_util
-import library.config_util as config_util
-from library.config_util import (
+import sys
+from pathlib import Path
+parentDir = Path(__file__).absolute().parent.parent.as_posix()
+sys.path.append(parentDir)
+
+from kohya_trainer.library import model_util
+from kohya_trainer.library import train_util
+from kohya_trainer.library import config_util
+from kohya_trainer.library.config_util import (
     ConfigSanitizer,
     BlueprintGenerator,
 )
-import library.huggingface_util as huggingface_util
-import library.custom_train_functions as custom_train_functions
-from library.custom_train_functions import (
+from kohya_trainer.library import huggingface_util
+from kohya_trainer.library import custom_train_functions
+from kohya_trainer.library.custom_train_functions import (
     apply_snr_weight,
     pyramid_noise_like,
     apply_noise_offset,

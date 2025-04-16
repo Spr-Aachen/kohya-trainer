@@ -16,8 +16,14 @@ from PIL import Image
 import open_clip
 from safetensors.torch import load_file
 
-from library import model_util, sdxl_model_util
-import networks.lora as lora
+import sys
+from pathlib import Path
+parentDir = Path(__file__).absolute().parent.parent.as_posix()
+sys.path.append(parentDir)
+
+from kohya_trainer.library import model_util, sdxl_model_util
+from kohya_trainer.networks import lora
+
 
 # scheduler: このあたりの設定はSD1/2と同じでいいらしい
 # scheduler: The settings around here seem to be the same as SD1/2

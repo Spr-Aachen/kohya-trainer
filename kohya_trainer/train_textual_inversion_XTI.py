@@ -11,24 +11,29 @@ import torch
 from accelerate.utils import set_seed
 import diffusers
 from diffusers import DDPMScheduler
-import library
 
-import library.train_util as train_util
-import library.huggingface_util as huggingface_util
-import library.config_util as config_util
-from library.config_util import (
+import sys
+from pathlib import Path
+parentDir = Path(__file__).absolute().parent.parent.as_posix()
+sys.path.append(parentDir)
+
+from kohya_trainer import library
+from kohya_trainer.library import train_util
+from kohya_trainer.library import huggingface_util
+from kohya_trainer.library import config_util
+from kohya_trainer.library.config_util import (
     ConfigSanitizer,
     BlueprintGenerator,
 )
-import library.custom_train_functions as custom_train_functions
-from library.custom_train_functions import (
+from kohya_trainer.library import custom_train_functions
+from kohya_trainer.library.custom_train_functions import (
     apply_snr_weight,
     prepare_scheduler_for_custom_training,
     pyramid_noise_like,
     apply_noise_offset,
     scale_v_prediction_loss_like_noise_prediction,
 )
-import library.original_unet as original_unet
+from kohya_trainer.library import original_unet
 from kohya_trainer.XTI_hijack import unet_forward_XTI, downblock_forward_XTI, upblock_forward_XTI
 
 imagenet_templates_small = [

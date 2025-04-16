@@ -11,23 +11,28 @@ from tqdm import tqdm
 import torch
 from accelerate.utils import set_seed
 from diffusers import DDPMScheduler
-from library import sdxl_model_util
 
-import library.train_util as train_util
-import library.config_util as config_util
-import library.sdxl_train_util as sdxl_train_util
-from library.config_util import (
+import sys
+from pathlib import Path
+parentDir = Path(__file__).absolute().parent.parent.as_posix()
+sys.path.append(parentDir)
+
+from kohya_trainer.library import sdxl_model_util
+from kohya_trainer.library import train_util
+from kohya_trainer.library import config_util
+from kohya_trainer.library import sdxl_train_util
+from kohya_trainer.library.config_util import (
     ConfigSanitizer,
     BlueprintGenerator,
 )
-import library.custom_train_functions as custom_train_functions
-from library.custom_train_functions import (
+from kohya_trainer.library import custom_train_functions
+from kohya_trainer.library.custom_train_functions import (
     apply_snr_weight,
     prepare_scheduler_for_custom_training,
     scale_v_prediction_loss_like_noise_prediction,
     add_v_prediction_like_loss,
 )
-from library.sdxl_original_unet import SdxlUNet2DConditionModel
+from kohya_trainer.library.sdxl_original_unet import SdxlUNet2DConditionModel
 
 
 def train(args):

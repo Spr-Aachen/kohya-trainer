@@ -2,7 +2,12 @@ import torch
 from typing import Union, List, Optional, Dict, Any, Tuple
 from diffusers.models.unet_2d_condition import UNet2DConditionOutput
 
-from library.original_unet import SampleOutput
+import sys
+from pathlib import Path
+parentDir = Path(__file__).absolute().parent.parent.as_posix()
+sys.path.append(parentDir)
+
+from kohya_trainer.library.original_unet import SampleOutput
 
 
 def unet_forward_XTI(

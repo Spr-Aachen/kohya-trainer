@@ -6,7 +6,12 @@ import torch
 import open_clip
 from library import sdxl_model_util, sdxl_train_util, train_util
 
-import train_textual_inversion
+import sys
+from pathlib import Path
+parentDir = Path(__file__).absolute().parent.parent.as_posix()
+sys.path.append(parentDir)
+
+from kohya_trainer import train_textual_inversion
 
 
 class SdxlTextualInversionTrainer(train_textual_inversion.TextualInversionTrainer):

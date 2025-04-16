@@ -42,15 +42,20 @@ import PIL
 from PIL import Image
 from PIL.PngImagePlugin import PngInfo
 
-import library.model_util as model_util
-import library.train_util as train_util
-import library.sdxl_model_util as sdxl_model_util
-import library.sdxl_train_util as sdxl_train_util
-from networks.lora import LoRANetwork
-import tools.original_control_net as original_control_net
-from tools.original_control_net import ControlNetInfo
-from library.sdxl_original_unet import SdxlUNet2DConditionModel
-from library.original_unet import FlashAttentionFunction
+import sys
+from pathlib import Path
+parentDir = Path(__file__).absolute().parent.parent.as_posix()
+sys.path.append(parentDir)
+
+from kohya_trainer.library import model_util
+from kohya_trainer.library import train_util
+from kohya_trainer.library import sdxl_model_util
+from kohya_trainer.library import sdxl_train_util
+from kohya_trainer.networks.lora import LoRANetwork
+from kohya_trainer.tools import original_control_net
+from kohya_trainer.tools.original_control_net import ControlNetInfo
+from kohya_trainer.library.sdxl_original_unet import SdxlUNet2DConditionModel
+from kohya_trainer.library.original_unet import FlashAttentionFunction
 
 # scheduler:
 SCHEDULER_LINEAR_START = 0.00085
