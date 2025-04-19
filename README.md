@@ -5,10 +5,17 @@ LoRA XL Trainer colab from [Linarquf](https://github.com/Linaqruf/kohya-trainer)
 
 
 # Updates
+
+## New Features
+- Update WD Tagger to v3
+- Add customized diffusers models
+- Add `text_encoder_lr`, `cache_latents`, `cache_latents_to_disk`, `cfg` options
+
+## Changes
+- Reorganize code blocks
+- Optimize `Prepare Environment` section
+
+## Bug Fixes
+- Fix LyCORIS version 1.8.1
 - Resolve env conflicts
 - Resolve hf model download issues
-- Add customized diffusers models
-- Update WD Tagger to v3
-- Add `Prodigy` optimizer
-- Add `text_encoder_lr`, `cache_latents`, `cache_latents_to_disk` options
-- Add recomended values to `optimizer_args` option
