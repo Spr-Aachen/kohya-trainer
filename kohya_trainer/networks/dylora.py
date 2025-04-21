@@ -16,6 +16,8 @@ from typing import List, Tuple, Union
 import torch
 from torch import nn
 
+from ..library import train_util
+
 
 class DyLoRAModule(torch.nn.Module):
     """
@@ -429,7 +431,6 @@ class DyLoRANetwork(torch.nn.Module):
 
         if os.path.splitext(file)[1] == ".safetensors":
             from safetensors.torch import save_file
-            from ..library import train_util
 
             # Precalculate model hashes to save time on indexing
             if metadata is None:

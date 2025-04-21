@@ -12,6 +12,8 @@ import numpy as np
 import torch
 import re
 
+from ..library import train_util
+
 
 RE_UPDOWN = re.compile(r"(up|down)_blocks_(\d+)_(resnets|upsamplers|downsamplers|attentions)_(\d+)_")
 
@@ -1083,7 +1085,6 @@ class LoRANetwork(torch.nn.Module):
 
         if os.path.splitext(file)[1] == ".safetensors":
             from safetensors.torch import save_file
-            from ..library import train_util
 
             # Precalculate model hashes to save time on indexing
             if metadata is None:
